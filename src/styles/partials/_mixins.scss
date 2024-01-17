@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+@mixin tablet() {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+@mixin ctaButton {
+  height: 40px;
+  border-radius: 4px;
+  @content;
+}

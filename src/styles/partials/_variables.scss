@@ -1,0 +1,34 @@
+@use "../partials/typography" as *;
+
+$font-family: "AvenirNext";
+
+// PRIMARY COLORS
+$brainflix-black: #323232;
+$brainflix-blue: #0095ff;
+$brainflix-silver: #afafaf;
+$brainflix-white: #fff;
+
+// SECONDARY COLORS
+$brainflix-Darkblack: #000;
+$brainflix-Darkblue: #0065ad;
+$brainflix-mercury: #e1e1e1;
+$brainflix-alabaster: #fafafa;
+$brainflix-formerror: #d22d2d;
+
+// FONT-SIZES
+$heading-1: 2.063rem; //33px
+$heading-2: 1.5rem; //24px
+$section-header: 0.75rem; //12px
+$body-copy: 0.875rem; //14px
+$body-copy-2: 0.813rem; //13px
+$labels-btns: 0.75rem; //12px
+$labels-btns-2: 0.625rem; //10px
+
+// PADDING
+$padding-1: 2.25rem; //36px
+$padding-2: 1.5rem; //24px
+$padding-3: 1rem; //16px
+
+// MEDIA QUERY
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
