@@ -2,6 +2,7 @@ import "./Header.scss";
 import Logo from "../Logo/Logo";
 
 import Button from "../Button/Button";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
   const upload = "../../assets/Icons/upload.svg";
@@ -14,12 +15,7 @@ const Header = () => {
       <Logo src={Logo} />
 
       <div>
-        <form>
-          <div className='search-container'>
-            <img src={Search} alt='Search Icon' />
-            <input name='search' value='search' placeholder='search' />
-          </div>
-        </form>
+        <SearchBar src={Search} />
 
         <Button src={upload} btnText='UPLOAD' />
 
