@@ -15,7 +15,7 @@
 @mixin flex-center() {
   display: flex;
   justify-self: center;
-  align-self: center;
+  align-items: center;
 }
 
 @mixin ctaButton {

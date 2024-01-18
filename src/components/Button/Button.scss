@@ -1,0 +1,22 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.btn {
+  background-color: $brainflix-blue;
+  padding: 0.8rem 3rem 0.8rem 0.5rem;
+  color: $brainflix-white;
+  border-radius: $border-radius;
+  border: none;
+  font-size: $labels-btns-2;
+  font-family: $font-family;
+  font-weight: 600;
+  @include flex-center;
+
+  &:hover {
+    background-color: $brainflix-Darkblue;
+  }
+
+  &__icon {
+    padding-right: 2rem;
+  }
+}
