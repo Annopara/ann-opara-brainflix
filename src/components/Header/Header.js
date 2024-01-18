@@ -1,4 +1,6 @@
 import "./Header.scss";
+import Logo from "../Logo/Logo";
+
 import Button from "../Button/Button";
 
 const Header = () => {
@@ -9,9 +11,7 @@ const Header = () => {
 
   return (
     <header>
-      <div>
-        <img src={Logo} alt='Logo' />
-      </div>
+      <Logo src={Logo} />
 
       <div>
         <form>
