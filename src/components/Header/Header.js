@@ -12,7 +12,7 @@ import avatarImg from "../../assets/Images/Mohan-muruge.jpg";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className='header'>
         <Logo src={BrainFlixLogo} />
 
         <div>

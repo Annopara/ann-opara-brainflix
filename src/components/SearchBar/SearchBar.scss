@@ -1,19 +1,28 @@
-.search-form {
+.search {
   display: flex;
 
   &__container {
-    position: relative;
     display: flex;
+    align-items: center;
+    // width: 10%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid black;
+  }
 
-    &__icon {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+  &__icon {
+    margin-right: 10px;
+  }
 
-    &__input {
-      padding-left: 30px;
-    }
+  &__input {
+    padding: 10px;
+    margin-left: 10px;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
   }
 }
