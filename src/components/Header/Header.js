@@ -1,29 +1,28 @@
 import "./Header.scss";
 import Logo from "../Logo/Logo";
-
 import Button from "../Button/Button";
 import SearchBar from "../SearchBar/SearchBar";
+import Avatar from "../Avatar/Avatar";
+
+import upload from "../../assets/Icons/upload.svg";
+import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
+import Search from "../../assets/Icons/search.svg";
+import avatarImg from "../../assets/Images/Mohan-muruge.jpg";
 
 const Header = () => {
-  const upload = "../../assets/Icons/upload.svg";
-  const Logo = "../../assets/Logo/BrainFlix-logo.svg";
-  const Search = "../../assets/Icons/search.svg";
-  const avatar = "../../assets/Images/Mohan-muruge.jpg";
-
   return (
-    <header>
-      <Logo src={Logo} />
-
-      <div>
-        <SearchBar src={Search} />
-
-        <Button src={upload} btnText='UPLOAD' />
+    <>
+      <header>
+        <Logo src={BrainFlixLogo} />
 
         <div>
-          <img src={avatar} alt='Another Image' />
+          <SearchBar src={Search} />
+
+          <Button src={upload} btnText='UPLOAD' />
         </div>
-      </div>
-    </header>
+        <Avatar src={avatarImg} />
+      </header>
+    </>
   );
 };
 
