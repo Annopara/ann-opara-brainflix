@@ -1,0 +1,78 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.description {
+  padding: 1rem;
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 600;
+    padding-bottom: 0.8rem;
+
+    @include tablet {
+      font-weight: 700;
+    }
+  }
+
+  &__details {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  &__left {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__right {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__channel {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 0;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__fade {
+    color: $brainflix-silver;
+    font-size: 14px;
+    @include tablet {
+      padding: 0.2rem 1rem;
+    }
+  }
+
+  &__p {
+    padding: 1rem 0;
+
+    @include tablet {
+      @include flex-center;
+      padding: 1rem;
+    }
+
+    &--none {
+      padding: 0;
+    }
+  }
+
+  &__icon {
+    padding-right: 0.5rem;
+  }
+
+  &__content {
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}

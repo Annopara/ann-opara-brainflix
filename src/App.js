@@ -4,8 +4,7 @@ import Header from "./components/Header/Header";
 import "./styles/partials/_global.scss";
 import VideoData from "./data/video-details.json";
 import HeroFeatured from "./components/HeroFeatured/HeroFeatured";
-import Views from "../src/assets/Icons/views.svg";
-import Likes from "./assets/Icons/likes.svg";
+import Description from "./components/Description/Description";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
@@ -17,11 +16,11 @@ function App() {
 
   return (
     <>
-      <Header />;{/* HERO SECTION */}
+      <Header />
       <HeroFeatured currentVideo={currentVideo} />
-      {/* Description */}
       <div className='App__flex'>
-        <div>
+        <Description currentVideo={currentVideo} />
+        {/* <div>
           <h1>{VideoData[0].title}</h1>
           <div>
             <div>
@@ -42,7 +41,7 @@ function App() {
             </div>
             <p>{VideoData[0].description}</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Comment */}
         <section>
