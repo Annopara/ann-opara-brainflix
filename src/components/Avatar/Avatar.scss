@@ -1,12 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+
 .avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  overflow: hidden;
+  //   width: 10vh;
+  //   height: 15vw;
+  //   border-radius: 50%;
+  //   overflow: hidden;
+
+  margin: 0.5rem 0;
+  width: 2.25rem;
+  height: 2.25rem;
+
+  @include desktop {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  //   @include tablet {
+  //     width: 2.8125rem;
+  //     height: 2.8125rem;
+  //   }
 
   &__img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
   }
 }

@@ -1,24 +1,41 @@
+@use "../../styles/partials/mixins" as *;
+
 .search {
   display: flex;
 
-  &__container {
-    display: flex;
+  @include tablet {
+    justify-content: space-between;
     align-items: center;
-    // width: 10%;
+  }
+
+  &__container {
+    width: 90%;
     height: 50px;
     background-color: #fff;
     border-radius: 4px;
     padding: 10px;
     border: 1px solid black;
+    margin-bottom: 1rem;
+    @include flex-center;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      width: 25vw;
+      margin-right: 1rem;
+      padding: 0 1rem;
+    }
   }
 
-  &__icon {
-    margin-right: 10px;
-  }
+  // &__icon {
+  //   margin-right: 10px;
+  // }
 
   &__input {
     padding: 10px;
-    margin-left: 10px;
+
     flex: 1;
     border: none;
     outline: none;

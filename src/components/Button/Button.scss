@@ -3,7 +3,7 @@
 
 .btn {
   background-color: $brainflix-blue;
-  padding: 0.8rem 3rem 0.8rem 0.5rem;
+  padding: 0.8rem 1rem 0.8rem 1rem;
   color: $brainflix-white;
   border-radius: $border-radius;
   border: none;
@@ -11,12 +11,22 @@
   font-family: $font-family;
   font-weight: 600;
   @include flex-center;
+  width: 100%;
+
+  @include tablet {
+    padding: 0 1rem;
+    width: fit-content;
+  }
+
+  @include desktop {
+    width: 50%;
+  }
 
   &:hover {
     background-color: $brainflix-Darkblue;
   }
 
   &__icon {
-    padding-right: 2rem;
+    padding: 0 2rem 0 0;
   }
 }

@@ -12,16 +12,20 @@ import avatarImg from "../../assets/Images/Mohan-muruge.jpg";
 const Header = () => {
   return (
     <>
-      <header className='header'>
-        <Logo src={BrainFlixLogo} />
+      <div className='header__desktop'>
+        <header className='header'>
+          <Logo src={BrainFlixLogo} />
 
-        <div>
-          <SearchBar src={Search} />
+          <div className='header__right'>
+            <div className='header__search'>
+              <SearchBar src={Search} />
 
-          <Button src={upload} btnText='UPLOAD' />
-        </div>
-        <Avatar src={avatarImg} />
-      </header>
+              <Button src={upload} btnText='UPLOAD' />
+            </div>
+            <Avatar src={avatarImg} />
+          </div>
+        </header>
+      </div>
     </>
   );
 };
