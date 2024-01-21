@@ -1,0 +1,146 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+  padding: 1rem;
+
+  @include tablet {
+    padding: 36px;
+  }
+  @include desktop {
+    width: 78%;
+    margin: 0 auto;
+  }
+
+  &__length {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__field {
+    @include flex-center;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    @include tablet {
+      align-items: flex-end;
+    }
+  }
+
+  &__img {
+    margin-top: 3rem;
+  }
+
+  &__label {
+    color: $brainflix-silver;
+    font-size: 14px;
+    @include tablet {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__div {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      height: 8vh;
+    }
+  }
+
+  &__textarea {
+    width: 35vh;
+    height: 10vh;
+    margin: 1rem 0;
+    padding: 1rem;
+
+    @include tablet {
+      margin: 0 2rem 0 0;
+      height: 8vh;
+      width: 60vh;
+    }
+
+    @include desktop {
+      margin: 0 2rem 0 0;
+      height: 8vh;
+      width: 70vh;
+    }
+  }
+}
+
+// POST
+.post {
+  padding: 1rem 1rem 0.5rem 1rem;
+
+  @include tablet {
+    padding: 1rem 0;
+    margin: 1rem 7.5rem;
+  }
+
+  &__desktop {
+    @include desktop {
+      width: 78%;
+      margin: 0 auto;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    margin: 1rem;
+    border-top: 1px solid $brainflix-mercury;
+
+    &-last {
+      border-bottom: 1px solid $brainflix-mercury;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: $brainflix-mercury;
+    height: 10vw;
+    width: 10vw;
+    width: 2.25rem;
+    height: 2.25rem;
+
+    @include tablet {
+      width: 2.8125rem;
+      height: 2.8125rem;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__right {
+    width: 80%;
+  }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__date {
+    font-size: 0.813rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    padding: 1rem 0;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
