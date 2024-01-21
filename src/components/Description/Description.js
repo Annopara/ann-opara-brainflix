@@ -5,7 +5,7 @@ import likeIcon from "../../assets/Icons/likes.svg";
 import formatDate from "../../utils/timestampDate";
 
 const Description = ({ currentVideo }) => {
-  const { title, channel, timestamp, views, likes, description } = currentVideo;
+  const { title, channel, description, views, likes, timestamp } = currentVideo;
 
   const date = new Date(timestamp);
   const formattedDate = formatDate(date);
