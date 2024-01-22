@@ -45,7 +45,7 @@ const Comment = ({ currentVideo, alterVideo }) => {
               alterVideo({
                 key: comment.id,
                 name: comment.name,
-                comments: comment.comment,
+                comment: comment.comment,
                 timestamp: comment.timestamp,
               })
             }

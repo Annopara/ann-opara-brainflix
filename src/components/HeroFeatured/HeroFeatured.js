@@ -1,6 +1,5 @@
 import "./HeroFeatured.scss";
 
-// const FeaturedBook = (props) => {
 const HeroFeatured = ({ currentVideo }) => {
   const { image, video } = currentVideo;
   return (

@@ -1,32 +1,21 @@
-/* @media screen and (min-width: 768px) {
+.app {
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1280px) {
   .app {
     display: flex;
-    height: fit-content;
-  }
-} */
-
-.app {
-  display: flex;
-}
-
-.app__left {
-  width: 60%;
-  box-sizing: border-box;
-  border-right: 1px solid #ccc;
-}
-
-.app__right {
-  width: 40%;
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 768px) {
-  .app {
-    flex-direction: column;
-  }
-
-  .app__left,
-  .app__right {
+    box-sizing: border-box;
     width: 100%;
+  }
+
+  .app__right {
+    width: 30%;
+  }
+
+  .app__left {
+    width: 70%;
+    box-sizing: border-box;
+    border-right: 1px solid #e1e1e1;
   }
 }

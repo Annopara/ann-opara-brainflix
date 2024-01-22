@@ -1,4 +1,5 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .search {
   display: flex;
@@ -6,36 +7,33 @@
   @include tablet {
     justify-content: space-between;
     align-items: center;
+    width: 50%;
   }
 
   &__container {
     width: 90%;
-    height: 50px;
-    background-color: #fff;
+    height: 2.5rem;
     border-radius: 4px;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid $brainflix-mercury;
     margin-bottom: 1rem;
+    background-color: $brainflix-alabaster;
     @include flex-center;
 
     @include tablet {
       margin: 0;
+      height: 2.5rem;
     }
 
     @include desktop {
-      width: 25vw;
+      width: 30vw;
       margin-right: 1rem;
       padding: 0 1rem;
     }
   }
 
-  // &__icon {
-  //   margin-right: 10px;
-  // }
-
   &__input {
     padding: 10px;
-
     flex: 1;
     border: none;
     outline: none;

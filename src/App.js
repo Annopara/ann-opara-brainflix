@@ -19,6 +19,7 @@ function App() {
     <>
       <Header />
       <HeroFeatured currentVideo={currentVideo} />
+
       <div className='app'>
         <div className='app__left'>
           <Description currentVideo={currentVideo} alterVideo={alterVideo} />

@@ -1,13 +1,14 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .avatar {
   margin: 0.5rem 0;
-  width: 3rem;
-  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
 
-  @include desktop {
-    width: 3rem;
-    height: 3rem;
+  @include tablet {
+    width: 2.8125rem;
+    height: 2.8125rem;
   }
 
   &__img {
@@ -15,5 +16,9 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+
+    @include tablet {
+      min-height: 40px;
+    }
   }
 }

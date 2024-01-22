@@ -2,15 +2,35 @@
 @use "../../styles/partials/mixins" as *;
 
 .description {
-  padding: 1rem;
+  padding: $padding-2 1rem;
+
+  @include tablet {
+    padding: $padding-1;
+  }
+
+  @include desktop {
+    padding-right: 0;
+  }
+
+  &__desktop {
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+    }
+  }
 
   &__title {
-    font-size: 2.3rem;
+    font-size: $heading-2;
     font-weight: 600;
     padding-bottom: 0.8rem;
 
     @include tablet {
       font-weight: 700;
+      padding-bottom: 0;
+      font-size: $heading-1;
     }
   }
 
@@ -18,8 +38,13 @@
     @include flex-center;
     justify-content: space-between;
     padding: 1rem 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid $brainflix-mercury;
+    border-bottom: 1px solid $brainflix-mercury;
+
+    @include tablet {
+      padding: 0 1rem 0 0;
+      border-top: none;
+    }
   }
 
   &__left {
@@ -35,12 +60,12 @@
   }
 
   &__channel {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: $body-copy-2;
+    font-weight: 700;
     padding: 1rem 0;
 
     @include tablet {
-      padding: 0;
+      padding: 0.2rem 0;
     }
   }
 
@@ -59,10 +84,6 @@
       @include flex-center;
       padding: 1rem;
     }
-
-    &--none {
-      padding: 0;
-    }
   }
 
   &__icon {
@@ -71,8 +92,13 @@
 
   &__content {
     padding: 1rem 0;
-    font-size: 1rem;
+    font-size: $body-copy-2;
     font-weight: 500;
     line-height: 1.5;
+
+    @include tablet {
+      padding-right: 1rem;
+      font-size: $body-copy;
+    }
   }
 }

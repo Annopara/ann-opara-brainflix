@@ -2,30 +2,30 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment {
-  padding: 1rem;
+  padding: 0 1rem;
 
   @include tablet {
-    padding: 36px;
-  }
-  @include desktop {
-    width: 78%;
-    margin: 0 auto;
+    padding: 0 $padding-1;
   }
 
   &__length {
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   &__field {
-    @include flex-center;
-    justify-content: space-between;
+    display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
 
     @include tablet {
       align-items: flex-end;
     }
+  }
+
+  &__right {
+    width: 80%;
   }
 
   &__img {
@@ -34,7 +34,7 @@
 
   &__label {
     color: $brainflix-silver;
-    font-size: 14px;
+    font-size: $labels-btns;
     @include tablet {
       margin-bottom: 1rem;
     }
@@ -48,37 +48,54 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
-      height: 8vh;
+      height: 4vh;
     }
   }
 
   &__textarea {
-    width: 35vh;
+    width: 100%;
     height: 10vh;
     margin: 1rem 0;
-    padding: 1rem;
+    padding: 0.75rem;
+    border: 1px solid $brainflix-mercury;
+    outline: $brainflix-mercury;
+    border-radius: $border-radius;
+    background-color: $brainflix-alabaster;
+
+    &:focus {
+      outline: $brainflix-mercury;
+    }
+
+    &:active {
+      outline: $brainflix-black;
+    }
+
+    &:invalid {
+      outline: $brainflix-formerror;
+    }
 
     @include tablet {
       margin: 0 2rem 0 0;
-      height: 8vh;
-      width: 60vh;
+      height: 40px;
+      width: 100vh;
     }
 
     @include desktop {
-      margin: 0 2rem 0 0;
-      height: 8vh;
-      width: 70vh;
+      width: 50vh;
     }
   }
 }
 
 // POST
 .post {
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: $padding-2 1rem;
 
   @include tablet {
-    padding: 1rem 0;
-    margin: 1rem 7.5rem;
+    padding: $padding-1;
+  }
+
+  @include desktop {
+    padding-right: 0;
   }
 
   &__desktop {
@@ -92,12 +109,16 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 1.5rem 0;
-    margin: 1rem;
+    padding: 1rem 0;
     border-top: 1px solid $brainflix-mercury;
+    border-bottom: 1px solid $brainflix-mercury;
 
-    &-last {
-      border-bottom: 1px solid $brainflix-mercury;
+    @include tablet {
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      padding-right: 1rem;
     }
   }
 
@@ -105,8 +126,6 @@
     margin: 0 auto;
     border-radius: 50%;
     background-color: $brainflix-mercury;
-    height: 10vw;
-    width: 10vw;
     width: 2.25rem;
     height: 2.25rem;
 
@@ -126,15 +145,21 @@
   }
 
   &__title {
-    font-size: 14px;
+    font-size: $body-copy-2;
+    color: $brainflix-black;
+
+    @include tablet {
+      font-size: $body-copy;
+    }
   }
 
   &__date {
     font-size: 0.813rem;
+    color: $brainflix-silver;
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: $body-copy-2;
     padding: 1rem 0;
 
     @include tablet {

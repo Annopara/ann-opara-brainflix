@@ -5,13 +5,18 @@
   padding: 1rem;
 
   @include tablet {
-    padding: $padding-1;
+    padding: 2.5rem;
+  }
+
+  @include desktop {
+    margin: 0 auto;
   }
 
   &__header {
     margin-bottom: 1rem;
-    font-size: $padding-3;
+    font-size: $labels-btns;
     color: $brainflix-mercury;
+    letter-spacing: 1.2px;
   }
 
   &__list {
@@ -30,9 +35,11 @@
     margin: 1rem 0;
     border-radius: $border-radius;
     overflow: hidden;
+    transition: 0.5ms ease-in-out;
+    padding-top: 0.4rem;
 
     &:hover {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -41,17 +48,22 @@
     object-fit: cover;
     width: 150px;
     height: 100px;
+    background-color: $brainflix-mercury;
   }
 
   &__text {
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 1rem 0 1rem;
     flex: 1;
   }
   &__title {
-    font-size: 1rem;
+    font-size: $body-copy-2;
     padding-bottom: 1rem;
     font-weight: 600;
-    color: $brainflix-Darkblack;
+    color: $brainflix-black;
+
+    @include tablet {
+      font-size: $body-copy;
+    }
   }
   &__author {
     font-size: 0.8rem;
