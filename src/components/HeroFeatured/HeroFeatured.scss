@@ -12,6 +12,13 @@
     padding-top: 56.25%;
   }
 
+  // &__container {
+  //   @include desktop {
+  //     width: 80%;
+  //     margin: 0 auto;
+  //   }
+  // }
+
   &__video {
     position: absolute;
     top: 0;
@@ -24,6 +31,10 @@
 
     @include tablet {
       padding: 0 2.4rem;
+    }
+
+    @include desktop {
+      padding: 0 10.5rem;
     }
   }
 }

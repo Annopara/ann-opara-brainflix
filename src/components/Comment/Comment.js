@@ -15,59 +15,61 @@ const Comment = ({ currentVideo, alterVideo }) => {
 
   return (
     <>
-      <section className='comment'>
-        <div className='comment__length'>{comments.length || 0} Comments</div>
+      <div className='comment__all'>
+        <section className='comment'>
+          <div className='comment__length'>{comments.length || 0} Comments</div>
 
-        <section className='comment__field'>
-          <Avatar src={avatarImg} className='comment__img' />
-          <section className='comment__right'>
-            <form className='comment__form' onSubmit={(e) => clickHandler(e)}>
-              <h3 className='comment__label'>JOIN THE CONVERSATION</h3>
-              <div className='comment__div'>
-                <textarea
-                  className='comment__textarea'
-                  placeholder='Add a new comment'
-                ></textarea>
-                <Button src={upload} btnText='COMMENT' />
-              </div>
-            </form>
+          <section className='comment__field'>
+            <Avatar src={avatarImg} className='comment__img' />
+            <section className='comment__right'>
+              <form className='comment__form' onSubmit={(e) => clickHandler(e)}>
+                <h3 className='comment__label'>JOIN THE CONVERSATION</h3>
+                <div className='comment__div'>
+                  <textarea
+                    className='comment__textarea'
+                    placeholder='Add a new comment'
+                  ></textarea>
+                  <Button src={upload} btnText='COMMENT' />
+                </div>
+              </form>
+            </section>
           </section>
         </section>
-      </section>
 
-      {/* List of Comments */}
-      <section className='post'>
-        {comments.map((comment) => (
-          <section
-            className='comment__li'
-            key={comment.id}
-            onClick={() =>
-              alterVideo({
-                key: comment.id,
-                name: comment.name,
-                comment: comment.comment,
-                timestamp: comment.timestamp,
-              })
-            }
-          >
-            <div className='post__container'>
-              <div className='post__img-div'>
-                <div className='post__img'></div>
-              </div>
+        {/* List of Comments */}
+        <section className='post'>
+          {comments.map((comment) => (
+            <section
+              className='comment__li'
+              key={comment.id}
+              onClick={() =>
+                alterVideo({
+                  key: comment.id,
+                  name: comment.name,
+                  comment: comment.comment,
+                  timestamp: comment.timestamp,
+                })
+              }
+            >
+              <div className='post__container'>
+                <div className='post__img-div'>
+                  <div className='post__img'></div>
+                </div>
 
-              <section className='post__right'>
-                <section className='post__top'>
-                  <h3 className='post__title'>{comment.name}</h3>
-                  <p className='post__date'>
-                    {formatDate(new Date(comment.timestamp))}
-                  </p>
+                <section className='post__right'>
+                  <section className='post__top'>
+                    <h3 className='post__title'>{comment.name}</h3>
+                    <p className='post__date'>
+                      {formatDate(new Date(comment.timestamp))}
+                    </p>
+                  </section>
+                  <p className='post__text'>{comment.comment}</p>
                 </section>
-                <p className='post__text'>{comment.comment}</p>
-              </section>
-            </div>
-          </section>
-        ))}
-      </section>
+              </div>
+            </section>
+          ))}
+        </section>
+      </div>
     </>
   );
 };

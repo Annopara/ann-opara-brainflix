@@ -8,6 +8,12 @@
     padding: 0 $padding-1;
   }
 
+  &__all {
+    @include desktop {
+      padding: 0 0 0 8.5rem;
+    }
+  }
+
   &__length {
     font-weight: 700;
     margin-bottom: 1.5rem;

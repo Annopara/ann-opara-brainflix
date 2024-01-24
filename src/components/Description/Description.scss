@@ -14,11 +14,7 @@
 
   &__desktop {
     @include desktop {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 0;
+      padding: 0 0 0 8.5rem;
     }
   }
 
