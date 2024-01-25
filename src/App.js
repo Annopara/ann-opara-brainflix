@@ -1,41 +1,18 @@
 import "./App.css";
-import { useState } from "react";
 import "./styles/partials/_global.scss";
-import VideoData from "./data/video-details.json";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import HeroFeatured from "./components/HeroFeatured/HeroFeatured";
-import Description from "./components/Description/Description";
-import Comment from "./components/Comment/Comment";
-import VideoList from "./components/VideoList/VideoList";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
-  const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
-
-  const alterVideo = (videoObject) => {
-    setCurrentVideo(videoObject);
-  };
-
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <HeroFeatured currentVideo={currentVideo} />
-
-      <div className='app'>
-        <div className='app__left'>
-          <Description currentVideo={currentVideo} alterVideo={alterVideo} />
-
-          {/* Comment */}
-          <Comment currentVideo={currentVideo} alterVideo={alterVideo} />
-        </div>
-
-        {/* VideoList */}
-        <VideoList
-          videoData={VideoData}
-          currentVideo={currentVideo}
-          alterVideo={alterVideo}
-        />
-      </div>
-    </>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/video/:id' element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
