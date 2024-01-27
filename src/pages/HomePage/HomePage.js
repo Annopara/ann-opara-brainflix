@@ -1,69 +1,42 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-
-// import { useState } from "react";
-import "../../styles/partials/_global.scss";
-// import VideoData from "../../data/video-details.json";
-import "./HomePage.scss";
+// import React, { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import axios from "axios";
+import { useState } from "react";
 import HeroFeatured from "../../components/HeroFeatured/HeroFeatured";
 import Description from "../../components/Description/Description";
 import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
+import "./HomePage.scss";
+import VideoData from "../../data/video-details.json";
 
-const HomePage = () => {
-  const [videoGrid, setVideoGrid] = useState([]);
-  const [videoDataAll, setVideoDataAll] = useState({});
-  const { videoId } = useParams();
+function App() {
+  const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
 
-  const fetchVideoList = async (id) => {
-    try {
-      const videolist = await axios.get(
-        `https://project-2-api.herokuapp.com/videos?api_key=e73656e8-9d57-427a-8900-b0511b15060e`
-      );
-      setVideoGrid(videolist.data);
-      const videoData = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=e73656e8-9d57-427a-8900-b0511b15060e`
-      );
-      setVideoDataAll(videoData.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const alterVideo = (videoObject) => {
+    setCurrentVideo(videoObject);
   };
-
-  useEffect(() => {
-    fetchVideoList(videoId);
-  }, []);
-
-  const featuredMovieId = videoId || videoDataAll.id;
-
-  const featuredvideo = videoDataAll[featuredMovieId];
-
-  const filteredVideoData = Object.values(videoDataAll).filter(
-    (cookie) => cookie.id !== featuredMovieId
-  );
 
   return (
     <>
-      <HeroFeatured filteredVideoData={filteredVideoData} />
+      <HeroFeatured currentVideo={currentVideo} />
 
       <div className='homepage'>
         <div className='homepage__left'>
-          <Description filteredVideoData={filteredVideoData} />
+          <Description currentVideo={currentVideo} alterVideo={alterVideo} />
 
-          {/* <Comment currentVideo={currentVideo} alterVideo={alterVideo} /> */}
-          <Comment filteredVideoData={filteredVideoData} />
+          {/* Comment */}
+          <Comment currentVideo={currentVideo} alterVideo={alterVideo} />
         </div>
 
         {/* VideoList */}
         <VideoList
-          videoDataAll={videoDataAll}
-          videoGrid={videoGrid}
-          // alterVideo={alterVideo}
+          videoData={VideoData}
+          currentVideo={currentVideo}
+          alterVideo={alterVideo}
         />
       </div>
     </>
   );
-};
+}
 
-export default HomePage;
+export default App;
