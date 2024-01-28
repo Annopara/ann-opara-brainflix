@@ -3,6 +3,8 @@ import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import SearchBar from "../SearchBar/SearchBar";
 import Avatar from "../Avatar/Avatar";
+import { Link } from "react-router-dom";
+import React from "react";
 
 import upload from "../../assets/Icons/upload.svg";
 import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
@@ -14,7 +16,9 @@ const Header = () => {
     <>
       <div className='header__desktop'>
         <header className='header'>
-          <Logo src={BrainFlixLogo} />
+          <Link to='/'>
+            <Logo src={BrainFlixLogo} />
+          </Link>
 
           <div className='header__right'>
             <div className='header__search'>

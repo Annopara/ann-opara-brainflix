@@ -1,4 +1,5 @@
 import "./HeroFeatured.scss";
+import React from "react";
 
 const HeroFeatured = ({ currentVideo }) => {
   const { image, video } = currentVideo;

@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import "./Description.scss";
 import viewIcon from "../../assets/Icons/views.svg";
 import likeIcon from "../../assets/Icons/likes.svg";

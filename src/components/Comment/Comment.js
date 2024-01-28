@@ -1,19 +1,13 @@
-// import React from "react";
-// import { useState } from "react";
-import "./Comment.scss";
-
-// import { useParams } from "react-router-dom";
+import React from "react";
+// import { useState, useEffect } from "react";
 import "./Comment.scss";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
 import formatDate from "../../utils/timestampDate";
-
 import avatarImg from "../../assets/Images/Mohan-muruge.jpg";
 import upload from "../../assets/Icons/add_comment.svg";
 
-const Comment = ({ currentVideo, alterVideo }) => {
-  const { comments } = currentVideo;
-
+const Comment = ({ videoCommentArr }) => {
   const clickHandler = (e) => {
     if (e) e.preventDefault();
   };
@@ -22,7 +16,9 @@ const Comment = ({ currentVideo, alterVideo }) => {
     <>
       <div className='comment__all'>
         <section className='comment'>
-          <div className='comment__length'>{comments.length || 0} Comments</div>
+          <div className='comment__length'>
+            {videoCommentArr.length || 0} Comments
+          </div>
 
           <section className='comment__field'>
             <Avatar src={avatarImg} className='comment__img' />
@@ -43,19 +39,8 @@ const Comment = ({ currentVideo, alterVideo }) => {
 
         {/* List of Comments */}
         <section className='post'>
-          {comments.map((comment) => (
-            <section
-              className='comment__li'
-              key={comment.id}
-              onClick={() =>
-                alterVideo({
-                  key: comment.id,
-                  name: comment.name,
-                  comment: comment.comment,
-                  timestamp: comment.timestamp,
-                })
-              }
-            >
+          {videoCommentArr.map((comment) => (
+            <section className='comment__li' key={comment.id}>
               <div className='post__container'>
                 <div className='post__img-div'>
                   <div className='post__img'></div>
