@@ -24,7 +24,9 @@ const Header = () => {
             <div className='header__search'>
               <SearchBar src={Search} />
 
-              <Button src={upload} btnText='UPLOAD' />
+              <Link to='/upload'>
+                <Button src={upload} btnText='UPLOAD' />
+              </Link>
             </div>
             <Avatar src={avatarImg} />
           </div>

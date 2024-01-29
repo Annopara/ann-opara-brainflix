@@ -1,9 +1,7 @@
 import "./Form.scss";
+import React from "react";
 
 const Form = () => {
-  // const [input, setInput] = useState("");
-  // const [textarea, setTextarea] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -11,25 +9,28 @@ const Form = () => {
   return (
     <>
       <form onSubmit={handleSubmit} className='form'>
-        <label className='form__label'>
-          TITLE YOUR VIDEO
-          <input
-            type='text'
-            name='video'
-            className='form__input'
-            placeholder='Add a title to your video'
-          />
-        </label>
-        <div className='form__textarea-div'>
+        <div className='form__tablet'>
           <label className='form__label'>
-            ADD A VIDEO DESCRIPTION
+            TITLE YOUR VIDEO
             <input
-              type='password'
-              name='password'
-              className='form__textarea form__input'
-              placeholder='Add a description to your video'
+              type='text'
+              name='video'
+              className='form__input'
+              placeholder='Add a title to your video'
+              id='myForm'
             />
           </label>
+          <div className='form__textarea-div'>
+            <label className='form__label'>
+              ADD A VIDEO DESCRIPTION
+              <input
+                type='text'
+                name='description'
+                className='form__textarea form__input'
+                placeholder='Add a description to your video'
+              />
+            </label>
+          </div>
         </div>
       </form>
     </>
