@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+  margin: 1rem;
+  width: 80%;
+
+  &__label {
+    font-size: 0.5rem;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: $border-radius;
+    margin-top: 0.5rem;
+  }
+
+  &__textarea-div {
+    margin: 1.5rem 0;
+  }
+
+  &__textarea {
+    height: 10vh;
+    margin-top: 0.5rem;
+  }
+}

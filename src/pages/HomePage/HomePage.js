@@ -7,6 +7,7 @@ import Description from "../../components/Description/Description";
 import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
 import "./HomePage.scss";
+import Form from "../../components/Form/Form";
 
 function HomePage() {
   const [currentVideo, setCurrentVideo] = useState({});
@@ -48,6 +49,8 @@ function HomePage() {
           <div className='homepage__left'>
             <Description currentVideo={currentVideo} />
             <Comment videoCommentArr={videoCommentArr} />
+
+            <Form />
           </div>
 
           <VideoList currentVideo={currentVideo} videoGrid={videoGrid} />
