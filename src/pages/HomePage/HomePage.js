@@ -8,51 +8,49 @@ import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
 import "./HomePage.scss";
 
+const { REACT_APP_API_BASE_PATH } = process.env;
+
 function HomePage() {
   const [currentVideo, setCurrentVideo] = useState({});
   const [videoCommentArr, setVideoCommentArr] = useState([]);
   const [videoGrid, setVideoGrid] = useState([]);
   const { videoId } = useParams();
 
-  const api_uri = "https://project-2-api.herokuapp.com/videos/";
-  const api_key = "?api_key=5dd2c0f0-9a60-41cc-bbe0-f5df18d43396";
+  const api_uri = `${REACT_APP_API_BASE_PATH}/videos`;
   const firstId = "84e96018-4022-434e-80bf-000ce4cd12b8";
 
   useEffect(() => {
+    const selectedVideoId = videoId || firstId;
     const getApiData = async (videoId) => {
       try {
-        const objResponse = await axios.get(`${api_uri}${videoId}${api_key}`);
+        const objResponse = await axios.get(`${api_uri}/${videoId}`);
         setCurrentVideo(objResponse.data);
         setVideoCommentArr(objResponse.data.comments);
 
-        const listResponse = await axios.get(`${api_uri}${api_key}`);
+        const listResponse = await axios.get(`${api_uri}`);
         setVideoGrid(listResponse.data);
       } catch (error) {
         console.error(error);
       }
     };
-
-    const selectedVideoId = videoId || firstId;
-
-    if (currentVideo) {
-      getApiData(selectedVideoId);
-    }
-  }, [videoId, currentVideo]);
+    getApiData(selectedVideoId);
+  }, [videoId]);
 
   return (
     <>
       <HeroFeatured currentVideo={currentVideo} />
+      <main>
+        {currentVideo && (
+          <div className='homepage'>
+            <div className='homepage__left'>
+              <Description currentVideo={currentVideo} />
+              <Comment videoCommentArr={videoCommentArr} />
+            </div>
 
-      {currentVideo && (
-        <div className='homepage'>
-          <div className='homepage__left'>
-            <Description currentVideo={currentVideo} />
-            <Comment videoCommentArr={videoCommentArr} />
+            <VideoList currentVideo={currentVideo} videoGrid={videoGrid} />
           </div>
-
-          <VideoList currentVideo={currentVideo} videoGrid={videoGrid} />
-        </div>
-      )}
+        )}
+      </main>
     </>
   );
 }
